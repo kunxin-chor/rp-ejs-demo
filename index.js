@@ -11,11 +11,15 @@ app.use(express.static('public'));
 
 // any routes
 app.get('/', function(req,res){
-    res.render('home')
+    res.render('home', {
+       currentActive:'home'
+    })
 })
 
 app.get('/services', function(req,res){
-    res.send("services")
+    res.render('services', {
+        currentActive:'services'
+    });
 })
 
 app.listen(3000, function(){
